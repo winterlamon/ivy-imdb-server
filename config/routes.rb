@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  resources :actors
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  scope '/ivy-imdb' do
+    post '/actors/:birthday', to: 'actors#create'
+    # get '/actors/:birthday', to: 'actors#show'
+  end
 end
