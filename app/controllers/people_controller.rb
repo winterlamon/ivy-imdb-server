@@ -10,7 +10,6 @@ class PeopleController < ApplicationController
     parsed_content = Nokogiri::HTML(content)
 
     #mostKnownWork details
-
     parsed_content.css('.lister-item').map do |item|
       knownWorkDoc = open("http://www.imdb.com" + item.css('p').first.css('a').attribute('href').value)
       workContent = knownWorkDoc.read
