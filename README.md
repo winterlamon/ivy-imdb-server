@@ -12,7 +12,7 @@ This app uses:
 * React.js
 * Scraped data from IMDb using Nokogiri and Open-URI
 
-<p align=center><img src="/src/assets/ivy-imdb-start.png" alt="IVY IMDb start view" /></p>
+<p align=center><img src="/assets/ivy-imdb-start.png" alt="IVY IMDb start view" /></p>
 
 ## Installation
 
@@ -28,7 +28,7 @@ This repository is the back end that runs with its front-end repo (https://githu
 
 To search for people by birthday, a user selects a month and day from the dropdown menu. The app includes front-end form validations to prevent a user from submitted a date that does not exist (e.g. February 30). <em>Note: Because IMDb does not have information for people born on February 29, the validations for that month only accept days up to the 28th.</em>
 
-<p align=center><img src="/src/assets/ivy-imdb-validation.png" alt="IVY IMDb search form validations view" /></p>
+<p align=center><img src="/assets/ivy-imdb-validation.png" alt="IVY IMDb search form validations view" /></p>
 
 Upon a successful form submission, the birthday is passed through a function that connects to the API endpoint `http://localhost:3001/ivy-imdb/people/:birthday`. People objects are `find_or_create_by` on search rather than pre-seeded. A loader displays until 50 objects have been created. <em>Note: It does take a significant amount of time to scrape IMDb and create objects. Additional searches with the same parameters take a similar amount of time even after the objects already exist in the database.</em>
 
@@ -36,13 +36,13 @@ Upon a successful form submission, the birthday is passed through a function tha
 
 <p align=center><img src="/assets/ivy-imdb-server-create.png" alt="IVY IMDb people#create method" /></p>
 
-<p align=center><img src="/src/assets/ivy-imdb-loader.png" alt="IVY IMDb search loader view" /></p>
+<p align=center><img src="/assets/ivy-imdb-loader.png" alt="IVY IMDb search loader view" /></p>
 
 During testing, some anomalies occurred where calls to the API would fail because a People object would fail to create because the `mostKnownWork` did not include a rating as it was a work not yet released. The `people#create` method on the API was reconfigured set the rating to `0` in these cases.
 
 <p align=center><img src="/assets/ivy-imdb-server-serializer.png" alt="IVY IMDb PeopleSerializer code" /></p>
 
-<p align=center><img src="/src/assets/ivy-imdb-results.png" alt="IVY IMDb search results view" /></p>
+<p align=center><img src="/assets/ivy-imdb-results.png" alt="IVY IMDb search results view" /></p>
 
 The `Reset` button clears the search query for a new search.
 
