@@ -11,6 +11,7 @@ This app uses:
 * Ruby on Rails API
 * React.js
 * Scraped data from IMDb using Nokogiri and Open-URI
+* Semantic-UI-React
 
 <p align=center><img src="/assets/ivy-imdb-start.png" alt="IVY IMDb start view" /></p>
 
