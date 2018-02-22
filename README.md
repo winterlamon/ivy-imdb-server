@@ -30,7 +30,7 @@ To search for people by birthday, a user selects a month and day from the dropdo
 
 <p align=center><img src="/src/assets/ivy-imdb-validation.png" alt="IVY IMDb search form validations view" /></p>
 
-Upon a successful form submission, the birthday is passed through a function that connects to the API endpoint `http://localhost:3001/ivy-imdb/people/:birthday`. People objects are `find_or_create_by` on search rather than pre-seeded. A loader displays until 50 objects have been created. <em>Note: It does take a significant amount of time to scrape IMDb and create objects (~45 seconds per search). Additional searches with the same parameters take a similar amount of time even after the objects already exist in the database.</em>
+Upon a successful form submission, the birthday is passed through a function that connects to the API endpoint `http://localhost:3001/ivy-imdb/people/:birthday`. People objects are `find_or_create_by` on search rather than pre-seeded. A loader displays until 50 objects have been created. <em>Note: It does take a significant amount of time to scrape IMDb and create objects. Additional searches with the same parameters take a similar amount of time even after the objects already exist in the database.</em>
 
 <p align=center><img src="/assets/ivy-imdb-server-migration.png" alt="IVY IMDb People database creation" /></p>
 
